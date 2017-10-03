@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1505369031 source:c:\users\diego vaz\desktop\trabalho tp1\codigo\dominioslivro.cpp
+	"dominiosLivro.h"
+	<string>
+	<cstdlib>
+
+1505369031 c:\users\diego vaz\desktop\trabalho tp1\codigo\dominioslivro.h
+	<stdexcept>
+
+1505369031 source:c:\users\diego vaz\desktop\trabalho tp1\codigo\dominiosusuario.cpp
+	"dominiosUsuario.h"
+	<string>
+
+1505369031 c:\users\diego vaz\desktop\trabalho tp1\codigo\dominiosusuario.h
+	<stdexcept>
+
+1505369031 source:c:\users\diego vaz\desktop\trabalho tp1\codigo\entidades.cpp
+	"entidades.h"
+
+1505369031 c:\users\diego vaz\desktop\trabalho tp1\codigo\entidades.h
+	"dominiosUsuario.h"
+	"dominiosLivro.h"
+	<string>
+
+1505369031 source:c:\users\diego vaz\desktop\trabalho tp1\codigo\testeslivro.cpp
+	"testesLivro.h"
+
+1505369592 c:\users\diego vaz\desktop\trabalho tp1\codigo\testeslivro.h
+	"dominiosLivro.h"
+	<string>
+
+1505369031 source:c:\users\diego vaz\desktop\trabalho tp1\codigo\testesusuario.cpp
+	"testesUsuario.h"
+
+1505369030 c:\users\diego vaz\desktop\trabalho tp1\codigo\testesusuario.h
+	"dominiosUsuario.h"
+	<string>
+
