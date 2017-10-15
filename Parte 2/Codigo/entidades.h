@@ -3,7 +3,6 @@
 
 #include "dominiosUsuario.h"
 #include "dominiosLivro.h"
-#include <string>
 
 using namespace std;
 
@@ -28,7 +27,7 @@ public:
     /**
     * Metodo para setar o nome
     */
-    void set_Nome(Nome &nome){
+    void set_Nome(const Nome &nome){
         this->nome = nome;
     }
     /**
@@ -52,27 +51,27 @@ public:
     /**
     * Metodo para obter o nome.
     */
-    Nome get_Nome() {
-        return nome;
+    string get_Nome(){
+        return nome.getNome(); 
     }
     /**
     * Metodo para obter a senha.
     */
 
-    Senha get_Senha() {
-        return senha;
+    string get_Senha() {
+        return senha.getSenha();
     }
     /**
     * Metodo para obter o telefone.
     */
-    Telefone get_Telefone() {
-        return telefone;
+    string get_Telefone() {
+        return telefone.getTelefone();
     }
     /**
     * metodo para obter o apelido.
     */
-    Apelido get_Apelido() {
-        return apelido;
+    string get_Apelido() {
+        return apelido.getApelido();
     }
 };
 /**
@@ -115,26 +114,26 @@ public:
     /**
     * Metodo para obter o titulo.
     */
-    Titulo get_Titulo() {
-        return titulo;
+    string get_Titulo() {
+        return titulo.getTitulo();
     }
     /**
     * Metodo para obter a data.
     */
-    Data get_Data() {
-        return data;
+    string get_Data() {
+        return data.getData();
     }
     /**
     * Metodo para obter o codigo.
     */
-    Codigo get_Codigo() {
-        return codigo;
+    string get_Codigo() {
+        return codigo.getCodigo();
     }
     /**
     * Metodo para obter o genero.
     */
-    Genero get_Genero() {
-        return genero;
+    string get_Genero() {
+        return genero.getGenero();
     }
 };
 /**
@@ -169,20 +168,20 @@ public:
 	/**
     * Metodo para Obter o nome.
     */
-	Nome get_Nome(){
-		return nome;
+	string get_Nome(){
+		return nome.getNome();
 	}
 	/**
     * Metodo para Obter o Titulo .
     */
-	Titulo get_Titulo(){
-		return titulo;
+	string get_Titulo(){
+		return titulo.getTitulo();
 	}
 	/**
     * Metodo para Obter o texto.
     */
-	Texto get_Texto(){
-		return texto;
+	string get_Texto(){
+		return texto.getTexto();
 	}
 };
 
