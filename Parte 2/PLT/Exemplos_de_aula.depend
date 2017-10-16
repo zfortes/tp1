@@ -1,0 +1,107 @@
+# depslib dependency file v1.0
+1507034380 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\controladoras.cpp
+	"controladoras.h"
+
+1507033869 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\controladoras.h
+	"interfaces.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1507034553 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\interfaces.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1507033798 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\dominios.h
+	<stdexcept>
+
+1507033869 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\entidades.h
+	"dominios.h"
+	<string>
+
+1477088709 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\comandos.h
+
+1507034028 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\dominios.cpp
+	"dominios.h"
+
+1507034028 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\entidades.cpp
+	"entidades.h"
+
+1507034740 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\main.cpp
+	<stdexcept>
+	<iostream>
+	<string>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"controladoras.h"
+	"stubs.h"
+
+1507034553 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\stubs.h
+	"Interfaces.h"
+	<stdexcept>
+	<iostream>
+
+1507034341 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 3\stubs.cpp
+	"stubs.h"
+
+1507639297 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\comandos.cpp
+	"comandos.h"
+
+1507639297 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\comandos.h
+	"interfaces.h"
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1507639297 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\interfaces.h
+	"dominios.h"
+	"entidades.h"
+	<stdexcept>
+
+1507635806 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\dominios.h
+	<stdexcept>
+
+1507634512 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\entidades.h
+	"dominios.h"
+	<string>
+
+1507639328 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\controladoras.cpp
+	"controladoras.h"
+	"comandos.h"
+
+1507639297 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\controladoras.h
+	"interfaces.h"
+	"dominios.h"
+	<stdexcept>
+	<iostream>
+	<cstdlib>
+
+1507635806 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\dominios.cpp
+	"dominios.h"
+
+1507034028 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\entidades.cpp
+	"entidades.h"
+
+1507639297 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\main.cpp
+	<stdexcept>
+	<iostream>
+	<string>
+	"dominios.h"
+	"entidades.h"
+	"interfaces.h"
+	"controladoras.h"
+	"stubs.h"
+
+1507636823 c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\stubs.h
+	"Interfaces.h"
+	<stdexcept>
+	<iostream>
+
+1507637677 source:c:\users\fernando\dropbox\documentos\cursos\cic\tecnicas de programacao 1\versao c++\exemplos de códigos\exemplo 4\stubs.cpp
+	"stubs.h"
+
