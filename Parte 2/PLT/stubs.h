@@ -69,6 +69,7 @@ public:
     ResultadoGerente procurar(Apelido&) throw(runtime_error);   ///Metodo para procurar um usuario;
     ResultadoLivro consultar(Titulo&) throw(runtime_error);     ///Metodo para Consultar os dados de um livro;
     Resultado criar(Resenha&) throw(runtime_error);     ///Metodo para Criar uma resenha sobre um livro;
+    ResultadoGerente trocar(Titulo&) throw(runtime_error);     ///Metodo para checar os usuarios que querem trocar;
 };
 
 #endif // STUBS_H_INCLUDED

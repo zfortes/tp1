@@ -23,7 +23,9 @@ void ComandoIUGerenteIncluir::executar(ILNGerente* cntrLNGerente) throw(runtime_
     cin.ignore(256, '\n');
     while(true){
         try{
-            system ("clear");
+        	//system("pause");
+        	//system("CLS");
+            
 
             cout<<endl<<endl<<"                               INCLUIR LIVRO                     "<<endl<<endl;
             cout<<"Titulo valido        :       Conter ate 20 caracteres e nao conter espacos em branco duplicados" << endl;
@@ -40,31 +42,22 @@ void ComandoIUGerenteIncluir::executar(ILNGerente* cntrLNGerente) throw(runtime_
             getline(cin, valor);
             titulo.setTitulo(valor);
 
-            system("pause");
-
             cout << "Digite a Data: "<<endl;
             getline(cin, valor);
             data.setData(valor);
-
-            system("pause");
 
             cout << "Digite o Codigo: "<<endl;
             getline(cin, valor);
             codigo.setCodigo(valor);
 
-            system("pause");
 
             cout << "Digite o Genero: "<<endl;
             getline(cin, valor);
             genero.setGenero(valor);
 
-            system("pause");
-
             cout << "Digite o Nome do Autor: "<<endl <<endl;
             getline(cin, valor);
             nomeAutor.setNome(valor);
-
-            system("pause");
 
             livro.set_Titulo(titulo);
             livro.set_Data(data);
@@ -99,7 +92,7 @@ void ComandoIUGerenteIncluir::executar(ILNGerente* cntrLNGerente) throw(runtime_
     }
 }
 
-// Método por meio do qual é solicitada a execução do comando.
+/// Método por meio do qual é solicitada a execução do comando.
 
 void ComandoIUGerenteRemover::executar(ILNGerente* cntrLNGerente) throw(runtime_error){
 
@@ -107,10 +100,14 @@ void ComandoIUGerenteRemover::executar(ILNGerente* cntrLNGerente) throw(runtime_
     Titulo titulo;
     string valor;
 
-    // Código de interação com o usuário.
+    /// Código de interação com o usuário.
     cin.ignore(256, '\n');
     while(true){
         try{
+
+        	//system("pause");
+        	//system("CLS");
+
             cout<<endl<<endl<<"                             REMOVER LIVRO                   "<<endl<<endl;
             cout<<"Livro existente      :       O ceu preto" << endl;
             cout<<endl<<"Simular erro   :       Escrever um dos exemplos abaixo no titulo ou escrever algum dado em formato errado" <<endl<<endl; 
@@ -126,20 +123,24 @@ void ComandoIUGerenteRemover::executar(ILNGerente* cntrLNGerente) throw(runtime_
         }
     }
 
-    // Solicitar serviço.
+    /// Solicitar serviço.
+    try{
+	    resultado = cntrLNGerente->remover(titulo);
 
-    resultado = cntrLNGerente->remover(titulo);
-
-    if(resultado.getValor() == Resultado::SUCESSO){
-         cout << "Sucesso na execucao da operacao, Livro removido com sucesso" << endl <<endl;
-    }
-    else {
-        cout << "Falha na execucao da operacao, Livro não existente na estante" << endl <<endl;
-    }
+	    if(resultado.getValor() == Resultado::SUCESSO){
+	         cout << "Sucesso na execucao da operacao, Livro removido com sucesso" << endl <<endl;
+	    }
+	    else {
+	        cout << "Falha na execucao da operacao, Livro não existente na estante" << endl <<endl;
+	    }
+	}
+	catch(runtime_error &exp){
+        cout<<"Erro de sistema"<<endl;
+    }	
 
 }
 
-// Método por meio do qual é solicitada a execução do comando.
+/// Método por meio do qual é solicitada a execução do comando.
 
 void ComandoIUGerenteProcurar::executar(ILNGerente* cntrLNGerente)throw(runtime_error){
 
@@ -155,6 +156,10 @@ void ComandoIUGerenteProcurar::executar(ILNGerente* cntrLNGerente)throw(runtime_
     */
     while(true){
         try{
+
+        	//system("pause");
+        	//system("CLS");
+
             cout<<endl<<endl<<"                               PROCURAR USUARIO                      "<<endl<<endl;
             cout<<"Usuario Cadastrado   :       diego" << endl;
             cout<<endl<<"Simular erro   :       Escrever um dos exemplos abaixo no titulo ou escrever algum dado em formato errado" <<endl<<endl; 
@@ -171,25 +176,29 @@ void ComandoIUGerenteProcurar::executar(ILNGerente* cntrLNGerente)throw(runtime_
         }
     }
 
-    // Solicitar serviço.
+    /// Solicitar serviço.
 
+    try{
+	    resultado = cntrLNGerente->procurar(apelido);
 
-    resultado = cntrLNGerente->procurar(apelido);
-
-    if(resultado.getValor() == Resultado::SUCESSO){
-         cout << "Sucesso na execucao da operacao" <<endl << endl <<"Informacoes do Usuario: "<<endl <<endl ;
-         usuario = resultado.getUsuario();
-         cout<<"Nome    :   "<<usuario.get_Nome() <<endl;
-         cout<<"Apelido :   "<<usuario.get_Apelido() <<endl;
-         cout<<"Telefone:   "<<usuario.get_Telefone() <<endl;
-    }
-    else {
-        cout << "Falha na execucao da operacao, Usuario nao encontrado" << endl <<endl;
+	    if(resultado.getValor() == Resultado::SUCESSO){
+	         cout << "Sucesso na execucao da operacao" <<endl << endl <<"Informacoes do Usuario: "<<endl <<endl ;
+	         usuario = resultado.getUsuario();
+	         cout<<"Nome    :   "<<usuario.get_Nome() <<endl;
+	         cout<<"Apelido :   "<<usuario.get_Apelido() <<endl;
+	         cout<<"Telefone:   "<<usuario.get_Telefone() <<endl;
+	    }
+	    else {
+	        cout << "Falha na execucao da operacao, Usuario nao encontrado" << endl <<endl;
+	    }
+	}
+	catch(runtime_error &exp){
+        cout<<"Erro de sistema"<<endl;
     }
 
 }
 
-// Método por meio do qual é solicitada a execução do comando.
+/// Método por meio do qual é solicitada a execução do comando.
 
 void ComandoIUGerenteConsultar::executar(ILNGerente* cntrLNGerente)throw(runtime_error){
 
@@ -204,6 +213,10 @@ void ComandoIUGerenteConsultar::executar(ILNGerente* cntrLNGerente)throw(runtime
     */
     while(true){
         try{
+
+        	//system("pause");
+        	//system("CLS");
+
             cout<<endl<<endl<<"                              CONSULTAR LIVRO                   "<<endl<<endl;
             cout<<"Livro existente      :       O ceu preto" << endl;
             cout<<endl<<"Simular erro   :       Escrever um dos exemplos abaixo no titulo ou escrever algum dado em formato errado" <<endl<<endl; 
@@ -220,20 +233,24 @@ void ComandoIUGerenteConsultar::executar(ILNGerente* cntrLNGerente)throw(runtime
         }
     }
 
+    try{
+    	resultado=cntrLNGerente->consultar(titulo);
 
-    resultado=cntrLNGerente->consultar(titulo);
-
-    if(resultado.getValor() == Resultado::SUCESSO){
-         cout << "Sucesso na execucao da operacao" <<endl << endl <<"Informacoes do Livro: "<<endl <<endl ;
-         livro = resultado.getLivro();
-         cout<<"Titulo    :   "<<livro.get_Titulo() <<endl;
-         cout<<"Data      :   "<<livro.get_Data() <<endl;
-         cout<<"Codigo    :   "<<livro.get_Codigo() <<endl;
-         cout<<"Genero    :   "<<livro.get_Genero() <<endl;
-         cout<<"Nome Autor:   "<<livro.get_NomeAutor() <<endl;
-    }
-    else {
-        cout << "Falha na execucao da operacao, livro nao encontrado" << endl <<endl;
+	    if(resultado.getValor() == Resultado::SUCESSO){
+	         cout << "Sucesso na execucao da operacao" <<endl << endl <<"Informacoes do Livro: "<<endl <<endl ;
+	         livro = resultado.getLivro();
+	         cout<<"Titulo    :   "<<livro.get_Titulo() <<endl;
+	         cout<<"Data      :   "<<livro.get_Data() <<endl;
+	         cout<<"Codigo    :   "<<livro.get_Codigo() <<endl;
+	         cout<<"Genero    :   "<<livro.get_Genero() <<endl;
+	         cout<<"Nome Autor:   "<<livro.get_NomeAutor() <<endl;
+	    }
+	    else {
+	        cout << "Falha na execucao da operacao, livro nao encontrado" << endl <<endl;
+	    }
+	}
+	catch(runtime_error &exp){
+        cout<<"Erro de sistema"<<endl;
     }
 
 }
@@ -252,6 +269,10 @@ void ComandoIUGerenteCriar::executar(ILNGerente* cntrLNGerente)throw(runtime_err
     */
     while(true){
         try{
+
+        	//system("pause");
+        	//system("CLS");
+
             cout<<endl<<endl<<"                              CRIAR RESENHA                    "<<endl<<endl;
             cout<<"Livro existente      :       O ceu preto" << endl;
             cout<<"Nome Valido          :       Conter ate 15 letras, podendo conter tambem ponto e espaco em branco" <<endl;
@@ -282,14 +303,73 @@ void ComandoIUGerenteCriar::executar(ILNGerente* cntrLNGerente)throw(runtime_err
         }
     }
 
+    try{
+	    resultado=cntrLNGerente->criar(resenha);
 
-    resultado=cntrLNGerente->criar(resenha);
-
-    if(resultado.getValor() == Resultado::SUCESSO){
-         cout << "Sucesso na execucao da operacao" <<endl << endl <<"Informacoes do Livro: "<<endl <<endl ;
+	    if(resultado.getValor() == Resultado::SUCESSO){
+	         cout << "Sucesso na execucao da operacao" <<endl << endl <<"Informacoes do Livro: "<<endl <<endl ;
+	    }
+	    else {
+	        cout << "Falha na execucao da operacao, livro nao encontrado" << endl <<endl;
+	    }
+	}
+	catch(runtime_error &exp){
+        cout<<"Erro de sistema"<<endl;
     }
-    else {
-        cout << "Falha na execucao da operacao, livro nao encontrado" << endl <<endl;
+
+}
+
+void ComandoIUGerenteTrocar::executar(ILNGerente* cntrLNGerente)throw(runtime_error){
+
+    ResultadoGerente resultado;
+
+    Titulo titulo;
+    Usuario usuario;
+    string valor;
+    cin.ignore(256, '\n');
+
+    /**
+    * Código de interação com o usuário.
+    */
+    while(true){
+        try{
+
+            //system("pause");
+            //system("CLS");
+
+            cout<<endl<<endl<<"                               TROCAS                       "<<endl<<endl;
+            cout<<"Livro disponivel     :       O ceu preto" << endl;
+            cout<<endl<<"Simular erro   :       Escrever um dos exemplos abaixo no titulo ou escrever algum dado em formato errado" <<endl<<endl; 
+            
+            cout<<"Trigger de Falha     :      A lagoa azul  "<< endl;
+            cout<<"Erro de sistema      :      O panda preto "<< endl << endl;
+
+            cout << "Digite o Titulo:  "<<endl;
+            getline(cin, valor);
+            titulo.setTitulo(valor);
+            break;
+        }
+        catch(invalid_argument &exp){
+            cout << "Apelido com formato incorreto" << endl;
+        }
+    }
+
+    /// Solicitar serviço.
+
+    try{
+        resultado = cntrLNGerente->trocar(titulo);
+
+        if(resultado.getValor() == Resultado::SUCESSO){
+             cout << "Sucesso na execucao da operacao" <<endl << endl <<"Usuario que quer trocar: "<<endl <<endl ;
+             usuario = resultado.getUsuario();
+             cout<<"Nome     :   "<<usuario.get_Nome() <<endl;
+        }
+        else {
+            cout << "Falha na execucao da operacao, Ninguem quer trocar" << endl <<endl;
+        }
+    }
+    catch(runtime_error &exp){
+        cout<<"Erro de sistema"<<endl;
     }
 
 }

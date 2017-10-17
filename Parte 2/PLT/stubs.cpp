@@ -24,6 +24,7 @@ void StubAutenticacao::alocaUsuario(Usuario user){
     StubAutenticacao stub;
     Apelido apelido;
     apelido.setApelido(user.get_Apelido());
+    cout<<apelido.getApelido()<<endl;
     if (apelido.getApelido() == stub.TRIGGER_ERRO_SISTEMA){
         throw invalid_argument("Erro.");
     }
@@ -212,6 +213,37 @@ Resultado StubLNGerente::criar(Resenha &resenha) throw(runtime_error) {
             else{
                 if(resenha.get_Titulo()==livro.get_Titulo()){
                     resultado.setValor(ResultadoAutenticacao::SUCESSO);
+                }
+                else{
+                    resultado.setValor(ResultadoAutenticacao::FALHA);
+               }
+            }
+        }
+
+    return resultado;
+}
+
+ResultadoGerente StubLNGerente::trocar(Titulo &titulo) throw(runtime_error) {
+
+    // Apresentar dados recebidos.
+
+    cout << endl << "StubLNGerente::criar" << endl ;
+
+    ResultadoGerente resultado;
+
+    resultado.setValor(Resultado::SUCESSO);
+
+    if(titulo.getTitulo()==TRIGGER_FALHA){
+            resultado.setValor(ResultadoAutenticacao::FALHA);
+        }
+        else{
+            if(titulo.getTitulo()==TRIGGER_ERRO_SISTEMA){
+                throw runtime_error("Erro de sistema");
+            }
+            else{
+                if(titulo.getTitulo()==livro.get_Titulo()){
+                    resultado.setValor(ResultadoAutenticacao::SUCESSO);
+                    resultado.setUsuario(usuario);
                 }
                 else{
                     resultado.setValor(ResultadoAutenticacao::FALHA);

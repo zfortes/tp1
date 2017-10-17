@@ -7,32 +7,8 @@
 
 using namespace std;
 
-/// Declarações adiantadas.
-
-//class ILNAutenticacao;
+/// Declaracao adiantada.
 class ILNGerente;
-
-// Declaração de interface para serviço de autenticação na camada de apresentação.
-
-/*class IUAutenticacao {
-public:
-
-    // Método por meio do qual é solicitada autenticacao.
-
-    virtual ResultadoAutenticacao autenticar() throw(runtime_error) = 0;
-
-    // Método por meio do qual é estabelecida ligação (link) com a controladora na camada de serviço.
-
-    virtual void setCntrLNAutenticacao(ILNAutenticacao *) = 0;
-};
-
-// Declaração de interface para serviço de autenticação na camada de serviço.
-
-class ILNAutenticacao {
-public:
-    virtual Resultado autenticar(const Matricula&, const Senha&) throw(runtime_error)= 0;
-};
-*/
 
 /// Declaração de interface da camada de apresentação.
 
@@ -59,7 +35,7 @@ public:
     virtual ResultadoGerente procurar(Apelido&) throw(runtime_error) = 0; //Metodo virtual Procurar um usuario
     virtual ResultadoLivro consultar(Titulo&) throw(runtime_error) = 0; //Metodo virtual para Consultar um livro
     virtual Resultado criar(Resenha&) throw(runtime_error) = 0;    ///Metodo para Criar uma resenha sobre um livro;
-    
+    virtual ResultadoGerente trocar(Titulo&) throw(runtime_error) = 0;    ///Metodo para trocar um livro com outro usuario;
 };
 
 #endif // INTERFACES_H_INCLUDED

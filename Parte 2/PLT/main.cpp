@@ -1,5 +1,3 @@
-// Exemplos desenvolvidos para ilustrar a sintaxe da linguagem.
-
 #include <stdexcept>
 #include <iostream>
 #include <string>
@@ -25,19 +23,27 @@ int main()
     cntrIUGerente->setCntrLNGerente(stubLNGerente);
 
     ResultadoAutenticacao resultado;
-
-    InterfaceLoguin* p = new InterfaceLoguin();
-     p->menuInicial(p);
-
-    Apelido apelido;
-    apelido.setApelido("diego");
-    resultado.setApelido(apelido);
-    try{
-        // Solicita serviço da controladora de interface gerente.
+    while(true){
+        int decisao;
+        InterfaceLoguin* p = new InterfaceLoguin();
+        decisao=p->menuInicial(p);
+        if(decisao==1){
+            break;
+        }
+        Apelido apelido;
+        apelido.setApelido("diego");
+        resultado.setApelido(apelido);
+        
+        /// Solicita serviço da controladora de interface gerente.
         cntrIUGerente->executar(apelido);
-    }
-    catch(const runtime_error &exp){
-        cout << "Erro de sistema." << endl;
+
+        //system("pause");
+        //system("CLS");
+        cout<<"Deseja continuar?"<<endl<<"(1) continuar"<<endl<<"(2) terminar"<<endl;
+        cin>>decisao;
+        if(decisao==2){
+            break;
+        }
     }
 
     return 0;

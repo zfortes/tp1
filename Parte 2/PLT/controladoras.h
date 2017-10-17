@@ -25,8 +25,9 @@ public:
     InterfaceLoguin(){
         autenticado=-5;
     }
+    
     void autenticar(InterfaceLoguin* user) throw(invalid_argument);
-    void menuInicial(InterfaceLoguin* user) throw(invalid_argument);
+    int menuInicial(InterfaceLoguin* user) throw(invalid_argument);
     string getApelido();
     string getSenha();
     void setAutenticado(int i);
@@ -46,7 +47,8 @@ private:
     const static int PROCURAR  = 3;
     const static int CONSULTAR = 4;
     const static int CRIAR     = 5;
-    const static int RETORNAR  = 6;
+    const static int TROCAR    = 6;
+    const static int RETORNAR  = 7;
 
     /// Referência para servidor.
 

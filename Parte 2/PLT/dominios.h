@@ -23,13 +23,13 @@ private:
         const static int ascii_Z=90; /**Valor constante, armazena o valor ascii de Z*/
         const static int tamanhoMAX_apelido=5; /**Valor constante, armazena o valor maximo de caracteres permitidos na string*/
 
-
+        ///Metodo responsavel por validar o conteudo que vai ser inserido na variavel
         void validarApelido(string) throw (invalid_argument);
 
 public:
-
+        ///Metodo responsavel por atribuir o conteudo na variavel
         void setApelido(string) throw (invalid_argument);
-
+        ///Metodo responsavel por pegar o valor da variavel
         string getApelido(){
             return apelido;
         }
@@ -51,10 +51,13 @@ private:
 
 public:
 
+        ///Metodo responsavel por validar o conteudo que vai ser inserido na variavel
         static void validarNome(string) throw (invalid_argument);
 
+        ///Metodo responsavel por atribuir o conteudo na variavel
         void setNome(string) throw (invalid_argument);
 
+        ///Metodo responsavel por pegar o valor da variavel
         string getNome(){
         return nome;
         }
@@ -75,12 +78,14 @@ private:
         const static int ascii_Z=90; /**Valor constante, armazena o valor ascii de Z*/
         const static int tamanhoMAX_senha=4;  /**Valor constante, armazena o valor maximo de caracteres permitidos na string*/
 
+        ///Metodo responsavel por validar o conteudo que vai ser inserido na variavel
         void validarSenha(string) throw (invalid_argument);
 
 public:
-
+        ///Metodo responsavel por atribuir o conteudo na variavel
         void setSenha(string) throw (invalid_argument);
 
+        ///Metodo responsavel por pegar o valor da variavel
         string getSenha(){
             return senha;
         }
@@ -99,12 +104,14 @@ private:
         const static int ascii_9=57;   /**Valor constante, armazena o valor ascii do 9 */
         const static int tamanhoMAX_telefone=11;  /**Valor constante, armazena o valor maximo de caracteres permitidos na string*/
 
+        ///Metodo responsavel por validar o conteudo que vai ser inserido na variavel
         void validarTelefone(string) throw (invalid_argument);
 
 public:
-
+        ///Metodo responsavel por atribuir o conteudo na variavel
         void setTelefone(string) throw (invalid_argument);
 
+        ///Metodo responsavel por pegar o valor da variavel
         string getTelefone(){
             return telefone;
         }
@@ -124,13 +131,14 @@ private:
 
         const static int tamanhoMAX_titulo=20;  /**< Valor constante com o tamanho maximo do titulo>*/
 
-
+        ///Metodo responsavel por validar o conteudo que vai ser inserido na variavel
         void validarTitulo(string) throw (invalid_argument);
 
 public:
-
+        ///Metodo responsavel por atribuir o conteudo na variavel
         void setTitulo(string) throw (invalid_argument);
 
+        ///Metodo responsavel por pegar o valor da variavel
         string getTitulo(){
             return titulo;
         }
@@ -148,12 +156,15 @@ private:
         const static int MESES=12;  /**Valor constante, armazena o numero maximo de meses*/
         const static int DIAS=31; /** Valor constante, armazena o numero maximo de dias*/
         const static int tamanhoMAX_data=8; /** Valor constate, armazena o numero maximo de caracteres que podem estar na string*/
+        
+        ///Metodo responsavel por validar o conteudo que vai ser inserido na variavel
         void validarData(string) throw (invalid_argument);
 
 public:
-
+        ///Metodo responsavel por atribuir o conteudo na variavel
         void setData(string) throw (invalid_argument);
 
+        ///Metodo responsavel por pegar o valor da variavel
         string getData(){
         return data;
         }
@@ -172,12 +183,14 @@ private:
         const static int ascii_9=57;   /**Valor constante, armazena o valor ascii do 9 */
         const static int tamanhoMAX_codigo=5;  /**Valor constante, armazena o valor maximo de caracteres que a string pode conter */
 
+        ///Metodo responsavel por validar o conteudo que vai ser inserido na variavel
         void validarCodigo(string) throw (invalid_argument);
 
 public:
-
+        ///Metodo responsavel por atribuir o conteudo na variavel
         void setCodigo(string) throw (invalid_argument);
 
+        ///Metodo responsavel por pegar o valor da variavel
         string getCodigo(){
             return codigo;
         }
@@ -194,12 +207,14 @@ private:
 
         const static int tamanhoMAX_texto=40; /**Valor constante, armazena o valor maximo de caracteres permitidos no texto  */
 
+        ///Metodo responsavel por validar o conteudo que vai ser inserido na variavel
         void validarTexto(string) throw (invalid_argument);
 
 public:
-
+        ///Metodo responsavel por atribuir o conteudo na variavel
         void setTexto(string) throw (invalid_argument);
 
+        ///Metodo responsavel por pegar o valor da variavel
         string getTexto(){
             return texto;
         }
@@ -212,11 +227,13 @@ class Genero{
 private:
         string genero;
 
+        ///Metodo responsavel por validar o conteudo que vai ser inserido na variavel
         void validarGenero(string) throw (invalid_argument);
 public:
-
+        ///Metodo responsavel por atribuir o conteudo na variavel
         void setGenero(string) throw (invalid_argument);
 
+        ///Metodo responsavel por pegar o valor da variavel
         string getGenero(){
             return genero;
         }

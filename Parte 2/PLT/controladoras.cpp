@@ -14,9 +14,13 @@ void InterfaceLoguin::autenticar(InterfaceLoguin* user) throw(invalid_argument) 
 
     while(true) {
         try {
+
+            //system("pause");
+            //system("CLS");
+
             cout<<"Login valido     :       admin"<<endl;
             cout<<"Senha valida     :       asdf"<<endl;
-            cout<<"Erro de sistema  :       qwert"<<endl<<endl;
+            cout<<"Erro de sistema  :       qwert (Apelido)"<<endl<<endl;
 
             cout <<endl<< "Digite o apelido : " <<endl;
             cin >> apelidoLido;
@@ -35,9 +39,11 @@ void InterfaceLoguin::autenticar(InterfaceLoguin* user) throw(invalid_argument) 
         resultado = stub.verificaLoguin(user);
     }
     catch (const invalid_argument &exp) {
+        
         cout<<endl<<"---------------"<<endl;
         cout <<"Erro de sistema." << endl;
         cout<<"---------------"<<endl;
+
     }
 
     if (resultado < 0){
@@ -66,28 +72,30 @@ void InterfaceLoguin::menuAutentica(InterfaceLoguin* user) throw(invalid_argumen
 
 /**
 *Metodo que mostra a tela inicial*/
-void InterfaceLoguin::menuInicial(InterfaceLoguin* user) throw(invalid_argument){
+int InterfaceLoguin::menuInicial(InterfaceLoguin* user) throw(invalid_argument){
     int opcao=0;
     while(true) {
+        //system("pause");
+        //system("CLS");
 
-            cout<<"Digite a opcao desejada: "<<endl;
-            cout<<"1 - Para efetuar loguin."<<endl;
-            cout<<"2 - Para cadastrar"<<endl;
-            cout<<"3 - Para encerrar"<<endl;
-            cout<<"==";
-            cin>>opcao;
-            if (opcao == 1){
-                user->menuAutentica(user);
-                //user->autenticar(user);
-                break;
+        cout<<"Digite a opcao desejada: "<<endl;
+        cout<<"1 - Para efetuar loguin."<<endl;
+        cout<<"2 - Para cadastrar"<<endl;
+        cout<<"3 - Para encerrar"<<endl;
+        cout<<"==";
+        cin>>opcao;
+        if (opcao == 1){
+            user->menuAutentica(user);
+            break;
+        }else{
+            if (opcao==2){
+                user->menuCadastro();
             }else{
-                if (opcao==2){
-                    user->menuCadastro();
-                }else{
-                    return ;
-                }
+                return 1;
             }
         }
+    }
+    return 0;
 }
 
 
@@ -125,8 +133,18 @@ void InterfaceLoguin::menuCadastro() throw(invalid_argument){
     Telefone telefone;
     Senha senha;
 
+    //system("pause");
+    //system("CLS");
+
+    cout<<"Nome valido      :       Conter ate 15 caracteres, podendo conter letras, ponto e espaco em branco"<<endl;
+    cout<<"Apelido valido   :       Conter ate 5 letras "<<endl;
+    cout<<"Telefone valido  :       conter 11 numeros"<<endl;
+    cout<<"Senha valida     :       Conter ate 4 letras, sem repeticao"<<endl;
+    cout<<"ERRO DE SISTEMA  :       qwert (apelido)"<<endl<<endl;
+    
     while(true) {
         try {
+
             cout<<"Digite o nome desejado"<<endl;
             cin>>digitado;
             nome.setNome(digitado);
@@ -207,9 +225,10 @@ void CntrIUGerente::executar(Apelido &apelido) throw(runtime_error){
 
         // Ilustra limpeza de tela.
 
-        // system("clear");
+        //system("pause");
+        //system("CLS");
 
-        // Apresentar as opções.
+        /// Apresentar as opções.
 
         cout << endl << "Servicos ao Usuario." << endl << endl;
 
@@ -218,6 +237,7 @@ void CntrIUGerente::executar(Apelido &apelido) throw(runtime_error){
         cout << "Procurar usuario       - " << PROCURAR << endl;
         cout << "Consultar Livro        - " << CONSULTAR << endl;
         cout << "Criar Resenha          - " << CRIAR << endl;
+        cout << "Trocar livro           - " << TROCAR << endl;
         cout << "Retornar               - " << RETORNAR << endl << endl;
         cout << "Selecione uma opcao :"<<  endl;
 
@@ -239,6 +259,10 @@ void CntrIUGerente::executar(Apelido &apelido) throw(runtime_error){
             case CRIAR    : comando = new ComandoIUGerenteCriar();
                             comando->executar(cntrLNGerente);
                             break;
+            case TROCAR   : comando = new ComandoIUGerenteTrocar();
+                            comando->executar(cntrLNGerente);
+            break;
+
         }
 
         if(opcao == RETORNAR){
